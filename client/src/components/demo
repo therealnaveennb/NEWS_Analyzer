@@ -1,0 +1,27 @@
+<div v-else>
+      <table class="article-table">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Source</th>
+            <th>Feedback</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(article, index) in articles" :key="index">
+            <td>{{ index + 1 + (currentPage - 1) * itemsPerPage }}</td>
+            <td>{{ article.title }}</td>
+            <td>{{ article.author }}</td>
+            <td>{{ article.source }}</td>
+            <td>{{ article.label === -1 ? 'Negative' : article.label === 0 ? 'Neutral' : 'Positive' }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
+        <span>Page {{ currentPage }} of {{ totalPages }}</span>
+        <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>
+      </div>
+    </div>

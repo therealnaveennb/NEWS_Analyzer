@@ -48,7 +48,7 @@ def main():
     )
 
     # List of recipients
-    to = ["mirudhunkumar.it21@bitsathy.ac.in"]
+    to = ["praveenkumar.ad21@bitsathy.ac.in"]
 
     # Send the email
     smtp.sendmail(from_addr="naveenbharathi.it21@bitsathy.ac.in", to_addrs=to, msg=msg.as_string())
